@@ -67,24 +67,47 @@
                         -nombre : string
                         -tipoDeporte : TipoDeporte
                         -siglas : string
+                        +getId() int
+                        +setId(id : int)
+                        +getNombre() string
+                        +setNombre(nombre : string)
+                        +getTipoDeporte() TipoDeporte
+                        +setTipoDeporte (tipoDeporte : TipoDeporte)
+                        +getSiglas() string
+                        +setSiglas(siglas : string)
                         +renovarJugador() boolean
                         +contratarJugador() boolean
                         +renovarIndumentaria()
                       }
                       class Jugador{
                         -id : int
-                        -name : string
+                        -nombre : string
                         -apellido : string
-                        -minutosJugador : int
-                        -golesAnotados : int
+                        -minutosJugados : int
+                        -numeroAnotaciones : int
+                        +getId() int
+                        +setId(id : int)
+                        +getNombre() string
+                        +setNombre(nombre : string)
+                        +getApellido() string
+                        +setApellido(apellido : string)
+                        +getMinutosJugados() int
+                        setMinutosJugados(minutosJugados : int)
+                        +getNumeroAnotaciones() int
+                        +setNumeroAnotaciones(numeroAnotaciones : int)
                         +entrenar()
-                        +anotarGol()
                         +renovarContrato() boolean
                       }
                       class Sancion{
                         -id : int
                         -observacion : string
                         -multa : decimal
+                        +getId() int
+                        +setId(id : int)
+                        +getObservacion() string
+                        +setObservacion(observacion : string)
+                        +getMulta() decimal
+                        +setMulta(multa : decimal)
                         +guardarSancion()
                       }
 

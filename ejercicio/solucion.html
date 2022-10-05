@@ -17,8 +17,8 @@
         
         <div class="container-lg">
             <h3 class="text-center">DESARROLLO DE SOFTWARE DIRIGIDO POR MODELOS</h3>
-<div class="row">
-    <div class="col">
+
+    <div class="row">
         <div class="card">
           <div class="card-header  text-center">
             <strong>Ejemplo PIM (Modelo Independiente de la Plataforma)</strong>
@@ -26,6 +26,7 @@
           <div class="card-body text-center">
                 <div class="mermaid">
                  classDiagram
+                 direction LR
                     class Equipo
                         Equipo : +String nombre
                         Equipo : +String tipoDeporte
@@ -50,19 +51,21 @@
           </div>
         </div>
     </div>
-    <div class="col">
+    <div class="row">
         <div class="card text-center">
           <div class="card-header">
             <strong>Ejemplo PSM (Modelo eSpecífico de Plataforma)</strong>
           </div>
           <div class="card-body">
                 <div class="mermaid">
-                 classDiagram
-                     
+                    
+                    classDiagram
+                    direction LR
+                      
                       class Equipo {
                         -id : int
                         -nombre : string
-                        -tipoDeporte : string
+                        -tipoDeporte : TipoDeporte
                         -siglas : string
                         +renovarJugador() boolean
                         +contratarJugador() boolean
@@ -85,7 +88,16 @@
                         +guardarSancion()
                       }
 
+                      class TipoDeporte{
+                        &lt;&lt;enumeration&gt;&gt;
+                        FUTBOL
+                        BALONCESTO
+                        VOLEY
+                        CICLISMO
+                      }
+
                       %%relaciones de clases
+                      Equipo .. TipoDeporte
                       Equipo "1" --> "*" Jugador : tiene
                       Jugador "1" --> "*" Sancion : tiene
          
@@ -99,9 +111,9 @@
         </div>
         </div>
     </div>
-    <p class="fst-italic"><strong >Fuente: </strong>http://www.jtech.ua.es/j2ee/2007-2008/restringido/mda/sesion01-apuntes.html#:~:text=El%20PSM%20es%20una%20refinamiento,nivel%20de%20implementaci%C3%B3n%20del%20sistema.</p>
+    <p class="fst-italic"><strong >Autor: </strong>Freddy Chamorro</p>
 
-</div>
+    <p class="fst-italic"><strong >Fuente: </strong> <a href="http://www.jtech.ua.es/j2ee/2007-2008/restringido/mda/sesion01-apuntes.html#:~:text=El%20PSM%20es%20una%20refinamiento,nivel%20de%20implementaci%C3%B3n%20del%20sistema."> Arquitectura Dirigida por el Modelo</a> </p>
 
 
     </body>
